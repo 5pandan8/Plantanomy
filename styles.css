@@ -255,10 +255,15 @@ hr.Flower-divider{
     color: #60af3c;
 }
 
+.explore-container{
+    margin-top: 50px;
+    width: 88%;
+    margin: auto;
+}
+
 /* Explore */
 
 #plantTypeListSection{
-
     display: flex;
 }
 #plantTypeListSection h2{

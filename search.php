@@ -45,7 +45,7 @@ if ($conn->connect_error){
                              </a>
                         </span>
                         <ul class="navbar-nav">
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="aboutUs.php">About Us</a></li>
                             <li><a href="wishlist.php">Wishlist</a></li>'
                             ;
                             if (isset($_SESSION["user"])){
@@ -74,7 +74,7 @@ if ($conn->connect_error){
                         }
                     echo '
                     <a href="wishlist.php">Wishlist</a>
-                    <a href="#">About Us</a>
+                    <a href="aboutUs.php">About Us</a>
                 </div>
             
                 <script>

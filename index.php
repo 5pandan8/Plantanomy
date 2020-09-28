@@ -31,7 +31,7 @@ session_start();
                  </a>
             </span>
             <ul class="navbar-nav">
-                <li><a href="#">About Us</a></li>
+                <li><a href="aboutUs.php">About Us</a></li>
                 <li><a href="wishlist.php">Wishlist</a></li>
                 <?php
                     if (isset($_SESSION['user'])){
@@ -61,7 +61,7 @@ session_start();
             }
         ?>
         <a href="wishlist.php">Wishlist</a>
-        <a href="#">About Us</a>
+        <a href="aboutUs.php">About Us</a>
     </div>
 
     <script>
@@ -176,11 +176,11 @@ session_start();
         <div class="container">
             <h2>Explore</h2>
             <ul class="plantTypeList">
-                <li class="plantTypeListItem"><a href="#">Trees</a></li>
-                <li class="plantTypeListItem"><a href="#">Shrubs</a></li>
-                <li class="plantTypeListItem"><a href="#">Water Plants</a></li>
-                <li class="plantTypeListItem"><a href="#">House Plants</a></li>
-                <li class="plantTypeListItem"><a href="#">Vegetables</a></li>
+                <li class="plantTypeListItem"><a href="Trees.php">Trees</a></li>
+                <li class="plantTypeListItem"><a href="Shrubs.php">Shrubs</a></li>
+                <li class="plantTypeListItem"><a href="waterPlants.php">Water Plants</a></li>
+                <li class="plantTypeListItem"><a href="housePlants.php">House Plants</a></li>
+                <li class="plantTypeListItem"><a href="vegetables.php">Vegetables</a></li>
             </ul>
         </div>
     </section>

@@ -2,8 +2,6 @@
 
 session_start();
 
-if (isset($_SESSION['user'])){
-    $user = $_SESSION['user'];
 
     $conn = new mysqli('localhost', 'root', '', 'plantanomy');
     if ($conn->connect_error){
@@ -40,7 +38,7 @@ if (isset($_SESSION['user'])){
                 </span>
                 <ul class="navbar-nav">
                     <li><a href="aboutUs.php">About Us</a></li>
-                    <li><a href="#">Wishlist</a></li>';
+                    <li><a href="wishlist.php">Wishlist</a></li>';
                         if (isset($_SESSION["user"])){
                             echo "<li><a href='logout.php'>Logout</a></li>";
                         }else{
@@ -66,7 +64,7 @@ if (isset($_SESSION['user'])){
                 echo "<a href='login.php'>Your Account</a>";
             }
             echo '
-            <a href="#">Wishlist</a>
+            <a href="wishlist.php">Wishlist</a>
             <a href="aboutUs.php">About Us</a>
         </div>
         
@@ -99,75 +97,103 @@ if (isset($_SESSION['user'])){
                 </form>
         </div>
         </section>
+
+        <section id="springGardenSuggestion">
+        <div class="container">
+            <h1>Shrubs</h1>
         
         
         ';
         
-        $sql = "select distinct plant_name from wishlist where user_id = '$user'";
+        $sql = "select * from plants where plant_type = 'Shrub'" ;
         $result = $conn -> query($sql);
 
         if ($result->num_rows > 0) {
+            $counter = 1;
             while ($row = $result -> fetch_assoc()) {
-                $plant_name = $row['plant_name'];
-                $counter = 1;
-                $sql1 = "select * from plants where plant_name = '$plant_name'";
-                $result1 = $conn -> query($sql1);
+                echo '
 
-                if ($result1->num_rows == 1){
-                    while ($row1 = $result1 -> fetch_assoc()) {
+                    <article class="Flower">
 
-                        echo '
-                
-                        <div class="modal-container-search" id="wishFlower-modal-container'.$counter.'">
-                            <div class="modal-search">
-                                <div class="modal-search-img">
-                                    <img src="data:image/jpeg;base64,'.base64_encode($row1['plant_image'] ).'" alt="Spring flower">
-                                </div>
-                                <h1 id="wishFlower-plant-name'.$counter.'">'.$row1['plant_name'].'<h1>
-                                <table class="popupTable">
-                                    <tr>                   
-                                        <th>Type<th>
-                                        <td>'.$row1['plant_type'].'<td>
-                                        <th>Height<th>
-                                        <td>'.$row1['plant_height'].'<td>
-                                        <th>Sunlight<th>
-                                        <td>'.$row1['plant_sunlight'].'<td>
-                                    </tr>
-                                    <tr>
-                                        <th>Features<th>
-                                        <td>'.$row1['plant_features'].'<td>
-                                        <th>Seasons<th>
-                                        <td>'.$row1['plant_seasons'].'<td>
-                                        <th>Regions<th>
-                                        <td>'.$row1['plant_region'].'<td>
-                                    </tr>
-                                </table>
-                                <p>'.$row1['plant_info'].'</p>
-                                <form action="removeFav.php" method="post">
-                                    <input type="hidden" id="plantNameValue" name="plantNameValue" value="'.$row1['plant_name'].'" />
-                                    <button type="submit" class="Flower-cta" id="wishFlower-remove'.$counter.'"> Remove Fav </button>
-                                </form>
+                    <div class="Flower-img">
+                        <img src="data:image/jpeg;base64,'.base64_encode($row['plant_image'] ).'" alt="Spring flower">
+                    </div>
+
+                    <div class="Flower-content">
+
+                        <h2>'.$row['plant_name'].'</h2>
+                        <p>'.$row['plant_intro'].'</p>
+                        <button  class="Flower-cta" id="springFlowerBtn'.$counter.'" onclick=popUp("springFlower-modal-container'.$counter.'")> Read More </button>
+                    </div>
+                    </article>  
+
+                    <hr class="Flower-divider">
+
+                    <div class="modal-container" id="springFlower-modal-container'.$counter.'">
+                        <div class="modal">
+                            <div class="modal-img">
+                                <img src="data:image/jpeg;base64,'.base64_encode($row['plant_image'] ).'" alt="Spring flower">
                             </div>
+                            <h1 id="springFlower-plant-name'.$counter.'">'.$row['plant_name'].'<h1>
+                            <table class="popupTable">
+                                <tr>                   
+                                    <th>Type<th>
+                                    <td>'.$row['plant_type'].'<td>
+                                    <th>Height<th>
+                                    <td>'.$row['plant_height'].'<td>
+                                    <th>Sunlight<th>
+                                    <td>'.$row['plant_sunlight'].'<td>
+                                </tr>
+                                <tr>
+                                    <th>Features<th>
+                                    <td>'.$row['plant_features'].'<td>
+                                    <th>Seasons<th>
+                                    <td>'.$row['plant_seasons'].'<td>
+                                    <th>Regions<th>
+                                    <td>'.$row['plant_region'].'<td>
+                                </tr>
+                            </table>
+                            <p>'.$row['plant_info'].'</p>
+                            <button class="Flower-cta" id="springFlower-close'.$counter.'" onclick=closePopUp("springFlower-modal-container'.$counter.'")> Close me </button>
+                            <form action="fav.php" method="post">
+                                <input type="hidden" id="plantNameValue" name="plantNameValue" value="'.$row['plant_name'].'" />
+                                <button type="submit" class="Flower-cta" id="springFlower-add'.$counter.'"> Add Fav </button>
+                            </form>
                         </div>
-                    
-                    ';
+                    </div>
 
-                    }
-                }
-                else{
-                    echo "error in plants query";
-                }
+                </div>
+               ';    
                 $counter++;
             }       
             
             
+        }else{
+
+            echo 'Query Failed';
         }
-        else{
-            echo "<h1 style='text-align:center; padding: 50px 50px;'>No items in wishlist<h1>";
+    
+        echo '
+
+        </div>
+        </section>
+
+        <script type="text/javascript">
+
+        
+        function popUp(id){
+            const modal_container = document.getElementById(id);
+            modal_container.classList.add("show");
             
         }
 
-        echo '
+        function closePopUp(id){
+            const modal_container = document.getElementById(id);
+            modal_container.classList.remove("show");
+        }
+
+        
+        </script>
 
             <footer class="mainFooter">
 
@@ -192,10 +218,6 @@ if (isset($_SESSION['user'])){
             ';
     }
     $conn->close();
-
-}else{
-   echo "<script>location.href='login.php'</script>";
-}
 
 
 ?>
