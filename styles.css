@@ -30,22 +30,7 @@ body{
 }
 
 
-#springFlower-modal-container1.show{
-    pointer-events: auto;
-    opacity: 1;
-}
-
-#springFlower-modal-container2.show{
-    pointer-events: auto;
-    opacity: 1;
-}
-
-#ediblePlants-modal-container1.show{
-    pointer-events: auto;
-    opacity: 1;
-}
-
-#ediblePlants-modal-container2.show{
+.modal-container.show{
     pointer-events: auto;
     opacity: 1;
 }

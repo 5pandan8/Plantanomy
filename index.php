@@ -198,7 +198,7 @@ session_start();
                 die('Connection Failed: '.$conn->connect_error);
             }else{
     
-                $sql = "select * from plants";
+                $sql = "select * from plants where plant_type = 'SHRUBS'";
 
                 $result = $conn -> query($sql);
 
@@ -300,7 +300,7 @@ session_start();
                 die('Connection Failed: '.$conn->connect_error);
             }else{
     
-                $sql = "select * from plants";
+                $sql = "select * from plants where plant_type = 'VEGETABLES'";
 
                 $result = $conn -> query($sql);
 

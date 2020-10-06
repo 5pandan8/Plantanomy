@@ -105,7 +105,7 @@ session_start();
         
         ';
         
-        $sql = "select * from plants where plant_type = 'Tree'" ;
+        $sql = "select * from plants where plant_type = 'TREES'" ;
         $result = $conn -> query($sql);
 
         if ($result->num_rows > 0) {
@@ -161,8 +161,6 @@ session_start();
                             </form>
                         </div>
                     </div>
-
-                </div>
                ';    
                 $counter++;
             }       
