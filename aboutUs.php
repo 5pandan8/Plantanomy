@@ -40,7 +40,7 @@ session_start();
                         echo '<li><a href="login.php">Your Account</a></li>';
                     }
                 ?>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 
                 
             </ul>
@@ -52,7 +52,7 @@ session_start();
 
     <div id="side-menu" class="side-nav">
         <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-        <a href="#">Home</a>
+        <a href="index.php">Home</a>
         <?php
             if (isset($_SESSION['user'])){
                 echo '<a href="logout.php">Logout</a>';
@@ -98,26 +98,20 @@ session_start();
     
     <hr class="searchDivider">
 
-    <section id="plantTypeListSection">
-        <div class="container">
-            <h2>Explore</h2>
-            <ul class="plantTypeList">
-                <li class="plantTypeListItem"><a href="Trees.php">Trees</a></li>
-                <li class="plantTypeListItem"><a href="Shrubs.php">Shrubs</a></li>
-                <li class="plantTypeListItem"><a href="waterPlants.php">Water Plants</a></li>
-                <li class="plantTypeListItem"><a href="housePlants.php">House Plants</a></li>
-                <li class="plantTypeListItem"><a href="vegetables.php">Vegetables</a></li>
-            </ul>
+    <div id="aboutUS" class="plantOfTheDay">
+        <div class="card-img">
+            <img src="images/coverImage.jpg" alt="plantImage" id="plantOfTheDayImage">
         </div>
-    </section>
+        <div class="card-content">
+            <div>
+                <h1 class="card-title">ABOUT US</h1>
+                <p class="card-info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+        </div>
+    </div>
 
         
-    
-    </section>
-
     <hr class="footerDivider">
-
-    </div>
 
     
     <footer class="mainFooter">

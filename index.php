@@ -103,7 +103,7 @@ session_start();
                 die('Connection Failed: '.$conn->connect_error);
             }else{
     
-                $sql = "select * from plants";
+                $sql = "select * from plants order by RAND() limit 1"; 
 
                 $result = $conn -> query($sql);
 
