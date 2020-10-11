@@ -98,16 +98,50 @@ session_start();
     
     <hr class="searchDivider">
 
-    <div id="aboutUS" class="plantOfTheDay">
-        <div class="card-img">
-            <img src="images/coverImage.jpg" alt="plantImage" id="plantOfTheDayImage">
-        </div>
-        <div class="card-content">
-            <div>
-                <h1 class="card-title">ABOUT US</h1>
-                <p class="card-info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <div class="aboutUS">
+
+        <div class="about-content-container"> 
+            <div class="about-content">
+                <div>
+                    <div class="about-img">
+                        <img src="images/mission.png" alt="Spring flower">
+                    </div>
+                    <h1 class="card-title">Our Mission</h1>
+                    <p class="card-info">We at Plantanomy provide our website visitors with a premier collection of plant encyclopedia with entries from credible and published sources.
+                        At Plantanomy, you get free access to over 100 reference entries from sources you can site. Plus, you get topic related summaries, pictures, articles, etc. from around the world. Plantanomy takes great care in constantly uploading our content with the latest from our partners.
+                    </p>
+                </div>
+            </div>
+            <div class="about-content">
+                <div>
+                    <div class="about-img">
+                        <img src="images/team.png" alt="Spring flower">
+                    </div>
+                    <h1 class="card-title">Our Team</h1>
+                    <p class="card-info">We are a team created as part of Prof. Debarati Ghoshal’s Internet Programming class at Vidyalankar Institute of Technology. Our team was originally created as part of a first semester project in which we were supposed to create a Motion Sensor Burglar Alarm in our Workshop class.
+                        Since that project, we have taken on many more endeavors, such as learning HTML, CSS, Javascript and php in order to create web pages and websites of our own instead of relying on other applications to see our creative visions through.
+                    </p>
+                </div>
             </div>
         </div>
+       
+
+        <div class="social">
+            <h1>Contact Us</h1>
+            <a href="#">
+                <img class="social-icons" src="images/gmail.png">
+            </a>
+            <a href="#">
+                <img class="social-icons" src="images/fb.png">
+            </a>
+            <a href="#">
+                <img class="social-icons" src="images/insta.png">
+            </a>
+            <a href="#">
+                <img class="social-icons" src="images/twitter.png">
+            </a>                        
+        </div>  
+
     </div>
 
         
