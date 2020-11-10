@@ -20,13 +20,13 @@ if (isset($_SESSION['user'])){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Plantanomy</title>
         <link rel="stylesheet" href="styles.css">
-        
+
         </head>
-        
+
         <body>
-        
+
         <header>
-                
+
             <img src="images/logo.svg" alt="logo" id="logoImage">
             <nav class="navbar">
                 <span class="open-slide">
@@ -48,15 +48,15 @@ if (isset($_SESSION['user'])){
                         }
                     echo '
                     <li><a href="index.php">Home</a></li>
-                    
-                    
+
+
                 </ul>
             </nav>
         </header>
-        
-        
-        
-        
+
+
+
+
         <div id="side-menu" class="side-nav">
             <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
             <a href="index.php">Home</a>';
@@ -69,27 +69,27 @@ if (isset($_SESSION['user'])){
             <a href="#">Wishlist</a>
             <a href="aboutUs.php">About Us</a>
         </div>
-        
+
         <script>
             function openSlideMenu(){
                 document.getElementById("side-menu").style.width = "250px";
                 document.getElementById("main").style.marginLeft = "250px";
             }
-        
+
             function closeSlideMenu(){
                 document.getElementById("side-menu").style.width = "0px";
                 document.getElementById("main").style.marginLeft = "0px";
             }
         </script>
-        
+
         <div id="main">
-        
+
         <section id= "showcase">
             <div class="container">
-                <h1> Plant Encyclopedia</h1>
+                
             </div>
         </section>
-        
+
         <section id= "searchYourPlant">
             <div class="container">
                 <h1>Seach Your Plant</h1>
@@ -99,10 +99,10 @@ if (isset($_SESSION['user'])){
                 </form>
         </div>
         </section>
-        
-        
+
+
         ';
-        
+
         $sql = "select distinct plant_name from wishlist where user_id = '$user'";
         $result = $conn -> query($sql);
 
@@ -117,7 +117,7 @@ if (isset($_SESSION['user'])){
                     while ($row1 = $result1 -> fetch_assoc()) {
 
                         echo '
-                
+
                         <div class="modal-container-search" id="wishFlower-modal-container'.$counter.'">
                             <div class="modal-search">
                                 <div class="modal-search-img">
@@ -125,21 +125,21 @@ if (isset($_SESSION['user'])){
                                 </div>
                                 <h1 id="wishFlower-plant-name'.$counter.'">'.$row1['plant_name'].'<h1>
                                 <table class="popupTable">
-                                    <tr>                   
-                                        <th>Type<th>
-                                        <td>'.$row1['plant_type'].'<td>
-                                        <th>Height<th>
-                                        <td>'.$row1['plant_height'].'<td>
-                                        <th>Sunlight<th>
-                                        <td>'.$row1['plant_sunlight'].'<td>
+                                    <tr>
+                                        <th>Type</th>
+                                        <td>'.$row1['plant_type'].'</td>
+                                        <th>Height</th>
+                                        <td>'.$row1['plant_height'].'</td>
+                                        <th>Sunlight</th>
+                                        <td>'.$row1['plant_sunlight'].'</td>
                                     </tr>
                                     <tr>
-                                        <th>Features<th>
-                                        <td>'.$row1['plant_features'].'<td>
-                                        <th>Seasons<th>
-                                        <td>'.$row1['plant_seasons'].'<td>
-                                        <th>Regions<th>
-                                        <td>'.$row1['plant_region'].'<td>
+                                        <th>Features</th>
+                                        <td>'.$row1['plant_features'].'</td>
+                                        <th>Seasons</th>
+                                        <td>'.$row1['plant_seasons'].'</td>
+                                        <th>Regions</th>
+                                        <td>'.$row1['plant_region'].'</td>
                                     </tr>
                                 </table>
                                 <p>'.$row1['plant_info'].'</p>
@@ -149,7 +149,7 @@ if (isset($_SESSION['user'])){
                                 </form>
                             </div>
                         </div>
-                    
+
                     ';
 
                     }
@@ -158,13 +158,13 @@ if (isset($_SESSION['user'])){
                     echo "error in plants query";
                 }
                 $counter++;
-            }       
-            
-            
+            }
+
+
         }
         else{
             echo "<h1 style='text-align:center; padding: 50px 50px;'>No items in wishlist<h1>";
-            
+
         }
 
         echo '
@@ -180,15 +180,15 @@ if (isset($_SESSION['user'])){
                     <p>info@Plantanomy.com</p>
                 </div>
             </div>
-        
+
             <div class="footerBottom">
                 &copy; <a href="#" class="footer-cta" title="Plantanomy">Plantanomy.com</a> | Designed with HTLM5 & CSS
             </div>
-           
+
         </footer>
         </body>
         </html>
-            
+
             ';
     }
     $conn->close();

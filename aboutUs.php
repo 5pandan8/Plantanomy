@@ -5,22 +5,22 @@ session_start();
 ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantanomy</title>
-    <link rel="stylesheet" href="styles.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Plantanomy</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
 
-</head>
 
-<body>
-    
-    <header>
-            
-        <img src="images/logo.svg" alt="logo" id="logoImage">
-        <nav class="navbar">
+    <body>
+        <header>
+            <img src="images/logo.svg" alt="logo" id="logoImage">
+            <nav class="navbar">
             <span class="open-slide">
                  <a href="#" onclick="openSlideMenu()">
                     <svg width="30" height="30">
@@ -30,6 +30,7 @@ session_start();
                      </svg>
                  </a>
             </span>
+
             <ul class="navbar-nav">
                 <li><a href="#">About Us</a></li>
                 <li><a href="wishlist.php">Wishlist</a></li>
@@ -41,13 +42,13 @@ session_start();
                     }
                 ?>
                 <li><a href="index.php">Home</a></li>
-                
-                
+
+
             </ul>
         </nav>
     </header>
 
-    
+
 
 
     <div id="side-menu" class="side-nav">
@@ -81,9 +82,6 @@ session_start();
     <div id="main">
 
     <section id= "showcase">
-        <div class="container">
-            <h1>Plantanomy</h1>
-        </div>
     </section>
 
     <section id= "searchYourPlant">
@@ -95,38 +93,36 @@ session_start();
             </form>
         </div>
     </section>
-    
+
     <hr class="searchDivider">
 
-    <div class="aboutUS">
-
-        <div class="about-content-container"> 
-            <div class="about-content">
-                <div>
-                    <div class="about-img">
-                        <img src="images/mission.png" alt="Spring flower">
-                    </div>
-                    <h1 class="card-title">Our Mission</h1>
-                    <p class="card-info">We at Plantanomy provide our website visitors with a premier collection of plant encyclopedia with entries from credible and published sources.
-                        At Plantanomy, you get free access to over 100 reference entries from sources you can site. Plus, you get topic related summaries, pictures, articles, etc. from around the world. Plantanomy takes great care in constantly uploading our content with the latest from our partners.
-                    </p>
-                </div>
-            </div>
-            <div class="about-content">
-                <div>
-                    <div class="about-img">
-                        <img src="images/team.png" alt="Spring flower">
-                    </div>
-                    <h1 class="card-title">Our Team</h1>
-                    <p class="card-info">We are a team created as part of Prof. Debarati Ghoshal’s Internet Programming class at Vidyalankar Institute of Technology. Our team was originally created as part of a first semester project in which we were supposed to create a Motion Sensor Burglar Alarm in our Workshop class.
-                        Since that project, we have taken on many more endeavors, such as learning HTML, CSS, Javascript and php in order to create web pages and websites of our own instead of relying on other applications to see our creative visions through.
-                    </p>
-                </div>
-            </div>
+    <div class="wrapper">
+      <h1> Team Plantanomy </h1>
+      <br>
+      <div class="team">
+        <div class="team_member">
+          <div class="team_img">
+            <img src="https://www.flaticon.com/svg/static/icons/svg/2856/2856325.svg" alt="Team_image">
+          </div>
+          <h3>Our Mission</h3>
+          <br>
+          <p>We at Plantanomy provide our website visitors with a premier collection of plant encyclopedia with entries from credible and published sources.</p>
+          <p> At Plantanomy, you get free access to over 100 reference entries from sources you can site. Plus, you get topic related summaries, pictures, articles, etc. from around the world. Plantanomy takes great care in constantly uploading our content with the latest from our partners.</p>
         </div>
-       
+        <div class="team_member">
+          <div class="team_img">
+            <img src="https://www.flaticon.com/svg/static/icons/svg/3050/3050467.svg">
+          </div>
+          <h3>Our Team</h3>
+          <br>
+          <p> We are a team created as part of Prof. Debarati Ghoshal’s Internet Programming class at Vidyalankar Institute of Technology. Our team was originally created as part of a first semester project in which we were supposed to create a Motion Sensor Burglar Alarm in our Workshop class.</p>
+          <p> Since that project, we have taken on many more endeavors, such as learning HTML, CSS, Javascript and php in order to create web pages and websites of our own instead of relying on other applications to see our creative visions through.</p></div>
+      </div>
+    </div>
 
-        <div class="social">
+
+
+<div class="social">
             <h1>Contact Us</h1>
             <a href="#">
                 <img class="social-icons" src="images/gmail.png">
@@ -139,22 +135,22 @@ session_start();
             </a>
             <a href="#">
                 <img class="social-icons" src="images/twitter.png">
-            </a>                        
-        </div>  
+            </a>
+        </div>
 
     </div>
 
-        
+
     <hr class="footerDivider">
 
-    
+
     <footer class="mainFooter">
 
         <div class="footer-content">
             <div class="footer-section-about">
                 <img src="images/logo.svg" alt="logo" id="logoImage">
                 <h2>Plantanomy</h2>
-                <p>Plantanomy is a perfect heavan for all those plant and gardening lovers out there. You can all the information about any plant you want to search about. Also by signing up you can get acces to your personalized wishlist to keep all your favourites together.</p>
+                <p>Plantanomy is a perfect heavan for all those plant and gardening lovers out there. You can find all the information about any plant you want to search about. Also by signing up you can get acces to your personalized wishlist to keep all your favourites together.</p>
                 <p>info@Plantanomy.com</p>
             </div>
         </div>
@@ -162,7 +158,7 @@ session_start();
         <div class="footerBottom">
             &copy; <a href="#" class="footer-cta" title="Plantanomy">Plantanomy.com</a> | Designed with HTLM5 & CSS
         </div>
-       
+
     </footer>
 </body>
 </html>

@@ -16,17 +16,17 @@ session_start();
 </head>
 
 <body>
-    
+
     <header>
-            
+
         <img src="images/logo.svg" alt="logo" id="logoImage">
         <nav class="navbar">
             <span class="open-slide">
                  <a href="#" onclick="openSlideMenu()">
                     <svg width="30" height="30">
-                        <path d="M0,5 30,5" stroke="#33bb55" stroke-width="5" />
-                         <path d="M0,14 30,14" stroke="#33bb55" stroke-width="5" />
-                         <path d="M0,23 30,23" stroke="#33bb55" stroke-width="5" />
+                        <path d="M0,5 30,5" stroke="#1d4f31" stroke-width="5" />
+                         <path d="M0,14 30,14" stroke="#1d4f31" stroke-width="5" />
+                         <path d="M0,23 30,23" stroke="#1d4f31" stroke-width="5" />
                      </svg>
                  </a>
             </span>
@@ -41,13 +41,13 @@ session_start();
                     }
                 ?>
                 <li><a href="#">Home</a></li>
-                
-                
+
+
             </ul>
         </nav>
     </header>
 
-    
+
 
 
     <div id="side-menu" class="side-nav">
@@ -81,14 +81,11 @@ session_start();
     <div id="main">
 
     <section id= "showcase">
-        <div class="container">
-            <h1>Plantanomy</h1>
-        </div>
     </section>
 
     <section id= "searchYourPlant">
         <div class="container">
-            <h1>Seach Your Plant</h1>
+            <h1>Search Your Plant</h1>
             <form action="search.php" method="post">
                 <input type="search" name="searchPlantName" id="searchPlantName" placeholder="Enter Plant Name">
                 <button type="submit" class="button1">Search</button>
@@ -97,13 +94,13 @@ session_start();
     </section>
 
     <div class="plantOfTheDay">
-        <?php         
+        <?php
             $conn = new mysqli('localhost', 'root', '', 'plantanomy');
             if ($conn->connect_error){
                 die('Connection Failed: '.$conn->connect_error);
             }else{
-    
-                $sql = "select * from plants order by RAND() limit 1"; 
+
+                $sql = "select * from plants order by RAND() limit 1";
 
                 $result = $conn -> query($sql);
 
@@ -113,7 +110,7 @@ session_start();
                             <div class="card-img">
                                 <img src="data:image/jpeg;base64,'.base64_encode($row['plant_image'] ).'" alt="plantImage" id="plantOfTheDayImage">
                             </div>
-                  
+
                             <div class="card-content">
                                 <div>
                                     <h1 class="card-title">'.$row['plant_name'].'</h1>
@@ -129,21 +126,21 @@ session_start();
                                 </div>
                                 <h1 id="card-plant-name">'.$row['plant_name'].'<h1>
                                 <table class="popupTable">
-                                    <tr>                   
-                                        <th>Type<th>
-                                        <td>'.$row['plant_type'].'<td>
-                                        <th>Height<th>
-                                        <td>'.$row['plant_height'].'<td>
-                                        <th>Sunlight<th>
-                                        <td>'.$row['plant_sunlight'].'<td>
+                                    <tr>
+                                        <th>Type</th>
+                                        <td>'.$row['plant_type'].'</td>
+                                        <th>Height</th>
+                                        <td>'.$row['plant_height'].'</td>
+                                        <th>Sunlight</th>
+                                        <td>'.$row['plant_sunlight'].'</td>
                                     </tr>
                                     <tr>
-                                        <th>Features<th>
-                                        <td>'.$row['plant_features'].'<td>
-                                        <th>Seasons<th>
-                                        <td>'.$row['plant_seasons'].'<td>
-                                        <th>Regions<th>
-                                        <td>'.$row['plant_region'].'<td>
+                                        <th>Features</th>
+                                        <td>'.$row['plant_features'].'</td>
+                                        <th>Seasons</th>
+                                        <td>'.$row['plant_seasons'].'</td>
+                                        <th>Regions</th>
+                                        <td>'.$row['plant_region'].'</td>
                                     </tr>
                                 </table>
                                 <p>'.$row['plant_info'].'</p>
@@ -154,21 +151,21 @@ session_start();
                                 </form>
                             </div>
                         </div>
-                       ';    
-                        break;  
+                       ';
+                        break;
                     }
                 }
                 else{
                     echo "Query Failed";
                     $conn.close();
                 }
-    
+
             }
 
-        ?> 
+        ?>
     </div>
 
-    
+
 
     <hr class="searchDivider">
 
@@ -190,14 +187,14 @@ session_start();
     <section id="springGardenSuggestion">
         <div class="container">
             <h1>SPRING FLOWERS TO SPRUCE UP YOUR YARD</h1>
-            
-            <?php         
-            
+
+            <?php
+
             $conn = new mysqli('localhost', 'root', '', 'plantanomy');
             if ($conn->connect_error){
                 die('Connection Failed: '.$conn->connect_error);
             }else{
-    
+
                 $sql = "select * from plants where plant_type = 'SHRUBS'";
 
                 $result = $conn -> query($sql);
@@ -210,15 +207,15 @@ session_start();
                         <div class="Flower-img">
                             <img src="data:image/jpeg;base64,'.base64_encode($row['plant_image'] ).'" alt="Spring flower">
                         </div>
-        
+
                         <div class="Flower-content">
-        
+
                             <h2>'.$row['plant_name'].'</h2>
                             <p>'.$row['plant_intro'].'</p>
                             <button  class="Flower-cta" id="springFlowerBtn'.$counter.'" onclick=popUp("springFlower-modal-container'.$counter.'")> Read More </button>
                         </div>
-                        </article>  
-        
+                        </article>
+
                         <hr class="Flower-divider">
 
                         <div class="modal-container" id="springFlower-modal-container'.$counter.'">
@@ -228,21 +225,21 @@ session_start();
                                 </div>
                                 <h1 id="springFlower-plant-name'.$counter.'">'.$row['plant_name'].'<h1>
                                 <table class="popupTable">
-                                    <tr>                   
-                                        <th>Type<th>
-                                        <td>'.$row['plant_type'].'<td>
-                                        <th>Height<th>
-                                        <td>'.$row['plant_height'].'<td>
-                                        <th>Sunlight<th>
-                                        <td>'.$row['plant_sunlight'].'<td>
+                                    <tr>
+                                        <th>Type</th>
+                                        <td>'.$row['plant_type'].'</td>
+                                        <th>Height</th>
+                                        <td>'.$row['plant_height'].'</td>
+                                        <th>Sunlight</th>
+                                        <td>'.$row['plant_sunlight'].'</td>
                                     </tr>
                                     <tr>
-                                        <th>Features<th>
-                                        <td>'.$row['plant_features'].'<td>
-                                        <th>Seasons<th>
-                                        <td>'.$row['plant_seasons'].'<td>
-                                        <th>Regions<th>
-                                        <td>'.$row['plant_region'].'<td>
+                                        <th>Features</th>
+                                        <td>'.$row['plant_features'].'</td>
+                                        <th>Seasons</th>
+                                        <td>'.$row['plant_seasons'].'</td>
+                                        <th>Regions</th>
+                                        <td>'.$row['plant_region'].'</td>
                                     </tr>
                                 </table>
                                 <p>'.$row['plant_info'].'</p>
@@ -252,8 +249,8 @@ session_start();
                                     <button type="submit" class="Flower-cta" id="springFlower-add'.$counter.'"> Add Fav </button>
                                 </form>
                             </div>
-                        </div> 
-                       ';    
+                        </div>
+                       ';
                         $counter++;
                     }
                 }
@@ -261,11 +258,11 @@ session_start();
                     echo "Query Failed";
                     $conn.close();
                 }
-    
+
             }
 
             ?>
-            
+
         </div>
     </section>
 
@@ -274,11 +271,11 @@ session_start();
 
     <script type="text/javascript">
 
-        
+
         function popUp(id){
             const modal_container = document.getElementById(id);
             modal_container.classList.add('show');
-            
+
         }
 
         function closePopUp(id){
@@ -286,20 +283,20 @@ session_start();
             modal_container.classList.remove('show');
         }
 
-        
+
     </script>
 
     <section id="ediblePlantsToGrow">
         <div class="container">
             <h1>Edible Plants to Grow</h1>
 
-            <?php         
-            
+            <?php
+
             $conn = new mysqli('localhost', 'root', '', 'plantanomy');
             if ($conn->connect_error){
                 die('Connection Failed: '.$conn->connect_error);
             }else{
-    
+
                 $sql = "select * from plants where plant_type = 'VEGETABLES'";
 
                 $result = $conn -> query($sql);
@@ -312,18 +309,18 @@ session_start();
                         <div class="Flower-img">
                             <img src="data:image/jpeg;base64,'.base64_encode($row['plant_image'] ).'" alt="Spring flower">
                         </div>
-        
+
                         <div class="Flower-content">
-        
+
                             <h2>'.$row['plant_name'].'</h2>
                             <p>'.$row['plant_intro'].'</p>
-                        
+
                             <button  class="Flower-cta" id="ediblePlantsBtn'.$counter.'" onclick=popUp("ediblePlants-modal-container'.$counter.'")> Read More </button>
                         </div>
-                        </article>  
-        
+                        </article>
+
                         <hr class="Flower-divider">
-                       
+
                         <div class="modal-container" id="ediblePlants-modal-container'.$counter.'">
                         <div class="modal">
                             <div class="modal-img">
@@ -331,21 +328,21 @@ session_start();
                             </div>
                             <h1 id="ediblePlants-plant-name'.$counter.'">'.$row['plant_name'].'<h1>
                             <table class="popupTable">
-                                <tr>                   
-                                    <th>Type<th>
-                                    <td>'.$row['plant_type'].'<td>
-                                    <th>Height<th>
-                                    <td>'.$row['plant_height'].'<td>
-                                    <th>Sunlight<th>
-                                    <td>'.$row['plant_sunlight'].'<td>
+                                <tr>
+                                    <th>Type</th>
+                                    <td>'.$row['plant_type'].'</td>
+                                    <th>Height</th>
+                                    <td>'.$row['plant_height'].'</td>
+                                    <th>Sunlight</th>
+                                    <td>'.$row['plant_sunlight'].'</td>
                                 </tr>
                                 <tr>
-                                    <th>Features<th>
-                                    <td>'.$row['plant_features'].'<td>
-                                    <th>Seasons<th>
-                                    <td>'.$row['plant_seasons'].'<td>
-                                    <th>Regions<th>
-                                    <td>'.$row['plant_region'].'<td>
+                                    <th>Features</th>
+                                    <td>'.$row['plant_features'].'</td>
+                                    <th>Seasons</th>
+                                    <td>'.$row['plant_seasons'].'</td>
+                                    <th>Regions</th>
+                                    <td>'.$row['plant_region'].'</td>
                                 </tr>
                             </table>
                             <p>'.$row['plant_info'].'</p>
@@ -355,9 +352,9 @@ session_start();
                                     <button type="submit" class="Flower-cta" id="ediblePlants-add'.$counter.'"> Add Fav </button>
                                 </form>
                             </div>
-                        </div> 
-                       ';  
-                           
+                        </div>
+                       ';
+
                     $counter++;
                     }
                 }
@@ -365,21 +362,21 @@ session_start();
                     echo "Query Failed";
                     $conn.close();
                 }
-    
+
             }
 
             ?>
         </div>
 
-        
-    
+
+
     </section>
 
     <hr class="footerDivider">
 
     </div>
 
-    
+
     <footer class="mainFooter">
 
         <div class="footer-content">
@@ -394,7 +391,7 @@ session_start();
         <div class="footerBottom">
             &copy; <a href="#" class="footer-cta" title="Plantanomy">Plantanomy.com</a> | Designed with HTLM5 & CSS
         </div>
-       
+
     </footer>
 </body>
 </html>

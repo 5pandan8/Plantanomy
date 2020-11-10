@@ -4,24 +4,35 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Roboto;
 }
 
 body{
-    background-image: url(images/login_background.jpg);
+    background: url(images/5457201.jpg);
+    padding: 0;
+    margin: 0;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: Roboto;
 }
+
 .main{
     position: relative;
     width: 480px;
-    height: 400px;
+    height: 425px;
     padding: 10px;
     margin: 100px auto;
-    background: rgba(0, 0, 0, 0.6);
+    background: black;
+    opacity:0.6;
     border-radius: 10px;
-    box-shadow: 0 0 5px 0 #000;
+    transition: 0.7s;
 }
+
+.main:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+}
+
 header{
     position: relative;
     text-align: center;
@@ -32,7 +43,7 @@ img{
     height: auto;
 }
 h4{
-    font-size: 25px;
+    font-size:30px;
     color: white;
     text-shadow: 1px 1px 1px #000;
 }
@@ -59,8 +70,9 @@ label{
     box-shadow: 0 1px #000;
 }
 ::-webkit-input-placeholder{
-    color: #999;
-    font-size: 16px;
+    color: #ffff;
+    font-size: 18px;
+    opacity: 0.7;
 }
 .sub-btn{
     width: 100%;
@@ -68,7 +80,7 @@ label{
     border-radius: 5px;
     border: none;
     font-size: 20px;
-    background: linear-gradient(#f44336, #b71c1c);
+    background: linear-gradient(to bottom right, #1e8922,#13ca1a);
     color: white;
     cursor: pointer;
     text-shadow: 1px 2px 1px #000;
@@ -77,13 +89,13 @@ label{
     outline: none;
 }
 .sub-btn:hover{
-    background: linear-gradient(#b71c1c, #f44336);
+    background: linear-gradient(to bottom right, #15523d,#338052);
 }
 
 #home, #reg{
     color: white;
     padding: 0 20px 0 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Roboto;
     text-shadow: 1px 2px 1px #000;
 }
 #reg{

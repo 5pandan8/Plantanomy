@@ -18,13 +18,13 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Plantanomy</title>
         <link rel="stylesheet" href="styles.css">
-        
+
         </head>
-        
+
         <body>
-        
+
         <header>
-                
+
             <img src="images/logo.svg" alt="logo" id="logoImage">
             <nav class="navbar">
                 <span class="open-slide">
@@ -46,15 +46,15 @@ session_start();
                         }
                     echo '
                     <li><a href="index.php">Home</a></li>
-                    
-                    
+
+
                 </ul>
             </nav>
         </header>
-        
-        
-        
-        
+
+
+
+
         <div id="side-menu" class="side-nav">
             <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
             <a href="index.php">Home</a>';
@@ -67,27 +67,26 @@ session_start();
             <a href="wishlist.php">Wishlist</a>
             <a href="aboutUs.php">About Us</a>
         </div>
-        
+
         <script>
             function openSlideMenu(){
                 document.getElementById("side-menu").style.width = "250px";
                 document.getElementById("main").style.marginLeft = "250px";
             }
-        
+
             function closeSlideMenu(){
                 document.getElementById("side-menu").style.width = "0px";
                 document.getElementById("main").style.marginLeft = "0px";
             }
         </script>
-        
+
         <div id="main">
-        
+
         <section id= "showcase">
             <div class="container">
-                <h1> Plant Encyclopedia</h1>
             </div>
         </section>
-        
+
         <section id= "searchYourPlant">
             <div class="container">
                 <h1>Seach Your Plant</h1>
@@ -101,10 +100,10 @@ session_start();
         <section id="springGardenSuggestion">
         <div class="container">
             <h1>Water Plants</h1>
-        
-        
+
+
         ';
-        
+
         $sql = "select * from plants where plant_type = 'WATERPLANTS'" ;
         $result = $conn -> query($sql);
 
@@ -125,7 +124,7 @@ session_start();
                         <p>'.$row['plant_intro'].'</p>
                         <button  class="Flower-cta" id="springFlowerBtn'.$counter.'" onclick=popUp("springFlower-modal-container'.$counter.'")> Read More </button>
                     </div>
-                    </article>  
+                    </article>
 
                     <hr class="Flower-divider">
 
@@ -136,21 +135,21 @@ session_start();
                             </div>
                             <h1 id="springFlower-plant-name'.$counter.'">'.$row['plant_name'].'<h1>
                             <table class="popupTable">
-                                <tr>                   
-                                    <th>Type<th>
-                                    <td>'.$row['plant_type'].'<td>
-                                    <th>Height<th>
-                                    <td>'.$row['plant_height'].'<td>
-                                    <th>Sunlight<th>
-                                    <td>'.$row['plant_sunlight'].'<td>
+                                <tr>
+                                    <th>Type</th>
+                                    <td>'.$row['plant_type'].'</td>
+                                    <th>Height</th>
+                                    <td>'.$row['plant_height'].'</td>
+                                    <th>Sunlight</th>
+                                    <td>'.$row['plant_sunlight'].'</td>
                                 </tr>
                                 <tr>
-                                    <th>Features<th>
-                                    <td>'.$row['plant_features'].'<td>
-                                    <th>Seasons<th>
-                                    <td>'.$row['plant_seasons'].'<td>
-                                    <th>Regions<th>
-                                    <td>'.$row['plant_region'].'<td>
+                                    <th>Features</th>
+                                    <td>'.$row['plant_features'].'</td>
+                                    <th>Seasons</th>
+                                    <td>'.$row['plant_seasons'].'</td>
+                                    <th>Regions</th>
+                                    <td>'.$row['plant_region'].'</td>
                                 </tr>
                             </table>
                             <p>'.$row['plant_info'].'</p>
@@ -162,17 +161,17 @@ session_start();
                         </div>
                     </div>
 
-                
-               ';    
+
+               ';
                 $counter++;
-            }       
-            
-            
+            }
+
+
         }else{
 
             echo 'Query Failed';
         }
-    
+
         echo '
 
         </div>
@@ -180,11 +179,11 @@ session_start();
 
         <script type="text/javascript">
 
-        
+
         function popUp(id){
             const modal_container = document.getElementById(id);
             modal_container.classList.add("show");
-            
+
         }
 
         function closePopUp(id){
@@ -192,7 +191,7 @@ session_start();
             modal_container.classList.remove("show");
         }
 
-        
+
         </script>
 
             <footer class="mainFooter">
@@ -206,15 +205,15 @@ session_start();
                     <p>info@Plantanomy.com</p>
                 </div>
             </div>
-        
+
             <div class="footerBottom">
                 &copy; <a href="#" class="footer-cta" title="Plantanomy">Plantanomy.com</a> | Designed with HTLM5 & CSS
             </div>
-           
+
         </footer>
         </body>
         </html>
-            
+
             ';
     }
     $conn->close();

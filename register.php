@@ -8,13 +8,14 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="register_styles.css">
 </head>
 <body>
     <div class="main">
         <header>
-            <div class="icon"><img src="images/logo.svg"></div>
-            <h4>Registration</h4>
+            <div class="icon"><img src="images/Logo.png"></div>
+            <br> <h4>Registration</h4>
         </header>
         <form action="registration.php" method="post" id="register-box">
             <label for="username">Username</label><br>
@@ -31,6 +32,6 @@ session_start();
         </form>
         <a href="login.php" id="log">Already signed up?</a>
     </div>
-    
+
 </body>
 </html>

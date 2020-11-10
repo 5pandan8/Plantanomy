@@ -1,7 +1,7 @@
-
 body{
     font-family: "Arial", Serif;
     background-color: #ffffff;
+    font-size: 20px;
 }
 
 /* Pop up box */
@@ -18,7 +18,7 @@ body{
     opacity: 0;
     pointer-events: none;
     z-index: 999;
-    
+
 }
 
 .modal-container-search{
@@ -59,13 +59,13 @@ body{
 }
 
 .modal p{
-    font-size: 18px;
+    font-size: 20px;
     color: black;
     font-weight: normal;
 }
 
 .modal-search p{
-    font-size: 18px;
+    font-size: 20px;
     color: black;
     font-weight: normal;
 }
@@ -112,27 +112,40 @@ body{
     display: block;
 }
 
-table.popupTable, .popupTable th, .popupTable td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    font-size: 18px;
-    padding: 2px;
-}
-
-.popupTable td{
-    font-weight: normal;
-}
-
 table.popupTable{
-    width: 100%;
+    text-align: left;
     border-collapse: collapse;
+    margin: auto;
+    display: table;
+    padding: 8px;
+    font-weight: normal;
+    border-radius: 10px;
+    color: white;
+    border-spacing: 0;
 }
+
+.popupTable td,.popupTable tr{
+  background-image: linear-gradient(to bottom,#1d4f31,#2b5d35,#3b6b37,#4d7939,#618739,#729136);
+  border: 2px solid white;
+  padding: 4px;
+  background-color: #1d4f31;
+  text-align: center;
+
+}
+
+.popupTable tr{
+  opacity: 1.0;
+}
+
+
+
+
 
 /* Footer*/
 hr.footerDivider{
-    height: 20px;
-    border-radius: 5px;
-    background: linear-gradient(to right,#2c720c, #00b5be 100%);
+    height: 10px;
+    border-radius: 3px;
+    background-image: linear-gradient(to right top, #1d4f31, #2b5d35, #3b6b37, #4d7939, #618739, #729136, #849a33, #97a32f, #abaa26, #c1af1c, #d9b412, #f2b80a);
 }
 .mainFooter{
     height: 400px;
@@ -180,33 +193,44 @@ hr.footerDivider{
 
 /* Flower articles */
 #ediblePlantsToGrow h1{
-    font-size: 45px;
-    color: #60af3c;
+    font-size: 35px;
+    color: #1d4f31;
 }
 
 hr.Flower-divider{
-    height: 2px;
+    height: 1px;
     border-radius: 5px;
     background: darkgrey;
 }
 
 .Flower-cta{
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 15px 12px 15px 15px;
+    margin: 10px;
+    border: none;
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    color: white;
-    background: #58bd2a;
-    border-radius: .8rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    background: #1d4f31;
+    border-radius: .32rem;
     text-decoration: none;
-
+    transition: background 200ms;
 }
+
+.Flower-cta:hover{
+    background: #F2B80A;
+    opacity: 0.9;
+    color: #1d4f31;
+}
+
 .Flower{
     display: flex;
     margin: auto;
     padding-bottom: 30px;
 }
+
 .Flower-content{
     float: right;
     margin: auto;
@@ -214,15 +238,15 @@ hr.Flower-divider{
 }
 
 .Flower-content h2{
-    font-size: 25px;
-    color: #60af3c;
+    font-size: 30px;
+    color: #1d4f31;
 }
 
 .Flower-img{
     margin: auto;
-    min-width: 25rem;
-    max-width: 25rem;
-    height: 20rem;
+    min-width: 20rem;
+    max-width: 20rem;
+    height: 15rem;
     position: relative;
 }
 
@@ -230,14 +254,14 @@ hr.Flower-divider{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4rem;
+    border-radius: 3px;
     display: block;
 
 }
 
 #springGardenSuggestion h1{
-    font-size: 45px;
-    color: #60af3c;
+    font-size: 35px;
+    color: #1d4f31;
 }
 
 .explore-container{
@@ -253,88 +277,117 @@ hr.Flower-divider{
 }
 #plantTypeListSection h2{
     font-size: 45px;
-    color: #60af3c;
+    color: #1d4f31;
 }
 
 
 .plantTypeList{
     list-style: none;
     overflow: hidden;
-    text-align: left;
-    margin: 5px;
+    text-align: center;
+    margin: 50px;
+
 }
 
 .plantTypeListItem{
     float: left;
-    margin-right: 20px;
+    margin-right: 85px;
     text-align: left;
-    
 }
 
 .plantTypeListItem a{
     display: block;
-    padding: 16px;
-    color: #135a25;
+    padding: 15px;
+    color: #000000;
     text-decoration: none;
-    outline: 7px solid#60af3c;
-    font-size: 20px;
+    border: 4px solid #1d4f31;
+    font-size: 25px;
     margin: 10px 10px;
+    border-radius: 10px;
 }
+
 hr.searchDivider{
-    height: 20px;
-    border-radius: 5px;
-    background: linear-gradient(to right,#3e9e12, #00dae6 100%)
+  height: 10px;
+  border-radius: 5px;
+  background-image: linear-gradient(to right top, #1d4f31, #2b5d35, #3b6b37, #4d7939, #618739, #729136, #849a33, #97a32f, #abaa26, #c1af1c, #d9b412, #f2b80a);
 }
 
 .button1{
     height: 45px;
-    background-color: #135a25;
+    background-color:#f2b80a;
     border: none;
     padding-left: 20px;
     padding-right: 20px;
-    color: #ffffff;
-    border-radius: 10px;
+    color: black;
+    border-radius: 5px;
+    font-size: 18px;
 }
 
 
 /* About Us */
 
-.about-img{
-    min-width: 35rem;
-    max-width: 35rem;
-    height: 30rem;
-    position: relative;
+.wrapper{
+  margin-top: 50px;
 }
 
-.about-img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 4rem;
-
+.wrapper h1{
+  font-family: 'Arial',serif;
+  font-size: 45px;
+  font-weight: bolder;
+  color: #1e8922;
+  margin-bottom: 60px;
+  text-align: center;
+  font-style: normal;
 }
 
-.about-content{
-    margin: auto;
-
+.team{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  text-align: center;
+  flex-wrap: wrap;
 }
-.about-content-container{
-    display: flex;
-    padding: 5rem;
+
+.team .team_member{
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin: 10px;
+  margin-bottom: 50px;
+  width: 500px;
+  padding: 30px;
+  line-height: 20px;
+  color: rgb(29, 79, 49);
+  position: relative;
+  transition: 1s;
 }
 
-.aboutUs{
-    margin: 100px;
-    max-width: 98rem;
-    background-color: #fff;
-    box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
-    align-items: center;
-    border-radius: .8rem;
-    outline: 7px solid #60af3c;
-    display: flex;
-    flex-direction: column;
-    padding: 5rem;
+.team .team_member:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+  background:  #c7ead5;
+}
+
+.team .team_member h3{
+  color: #1d4f31;
+  font-size: 26px;
+  margin-top: 50px;
+}
+
+.team .team_member .team_img{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.team .team_member .team_img img{
+  width: 100px;
+  height: 100px;
+  padding: 5px;
 }
 
 .social{
@@ -342,26 +395,46 @@ hr.searchDivider{
 }
 
 .social-icons{
-    width: 30px;
-    height: 30px;
-    margin: 20px;
+    width: 35px;
+    height: 35px;
+    margin: 25px;
 }
 
 .social h1{
-    color: #60af3c;
+    color: #1e8922;
+    font-family: 'Arial', serif;
+    font-size: 45px;
+    font-weight: bolder;
+    margin-bottom: 60px;
+    text-align: center;
 }
 
+
 /* Plant of the Day card */
+
 .plantOfTheDay{
     margin: 100px;
-    max-width: 98rem;
+    max-width: 100rem;
     padding: 5rem;
-    background-color: #fff;
-    box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    border-radius: 10px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    border-radius: .8rem;
+    font-family: "Roboto", sans-serif;
 }
+
+
+.plantOfTheDay{
+  background: url(images/card1.png) ;
+  background-repeat: repeat;
+  border: 5px solid #f2b80a;
+  background-color: #1d4f31;
+}
+
+
+
 
 .card-img{
     min-width: 35rem;
@@ -372,11 +445,13 @@ hr.searchDivider{
 }
 
 .card-img img{
-    width: 100%;
-    height: 100%;
+    width: 600px;
+    height: 500px;
     object-fit: cover;
-    display: block;
-    border-radius: 4rem;
+    display: flex;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 5px solid #f2b80a;
 
 }
 
@@ -390,6 +465,7 @@ hr.searchDivider{
     box-shadow: .5rem .5rem 3rem lpx rgba(0, 0, 0, 0.5);
     border-radius: .8rem;
 
+
 }
 
 .card-date{
@@ -398,37 +474,44 @@ hr.searchDivider{
     font-size: 1.6rem;
     font-weight: 600;
     margin: .5rem 0;
+
 }
 
 .card-title{
     font-size: 2.5rem;
     margin: 1.5rem 0 2rem;
     text-transform: uppercase;
-    color: #60af3c;
+    color: white;
+    font-weight: 600;
 
 }
 
 .card-info{
     margin-bottom: 3rem;
-    font-size: 1.4rem;
-    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.5rem;
+    color: white;
+
 }
 
 .card-cta{
     display: inline-block;
-    padding: 1.5rem 3rem;
+    padding: 15px 12px 15px 15px;
+    margin: 10px;
+    border: none;
     letter-spacing: 1px;
     text-transform: uppercase;
+    text-align: center;
     font-size: 1.2rem;
-    color: #fff;
-    background-image: linear-gradient(to right,#51cf16, #00f2fe 100%);
-    border-radius: .8rem;
+    font-weight: bold;
+    color: #1d4f31;
+    background: #f2b80a;
+    border-radius: 0.32rem;
     text-decoration: none;
+    transition: background 200ms;
 }
 
-.card-cta:hover{
-    background-image: linear-gradient(to right, #00f2fe, #51cf16,  100%);
-}
+
+
 
 /* Cover image */
 header #logoImage{
@@ -438,24 +521,17 @@ header #logoImage{
 }
 
 #showcase{
-    background: url('images/coverImage.jpg') no-repeat 0 -400px;
-    height: 400px;
+    background: url('images/untitled.png') no-repeat 0 -200px;
+    height:300px;
+    display: block;
 }
 
-#showcase h1{
-    font-size: 55px;
-    text-align: center;
-    margin-bottom: 10px;
-    color: #ffffff;
-    background-color: #60af3c;
-    border-radius: 10px;
-}
 
 /* Search your plant */
 #main #searchYourPlant{
-    background-color:#60af3c;
+    background-color: #1d4f31;
     margin: auto;
-    margin-top: 5px;
+    margin-top: 3px;
     color: #ffffff;
 }
 
@@ -467,14 +543,15 @@ header #logoImage{
 #main #searchYourPlant form{
     float: right;
     margin-top: 45px;
-
 }
 
 #main #searchYourPlant #searchPlantName{
-    padding: 10px;
+    padding: 15px;
     height: 45px;
     width: 350px;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 18px;
+    color: #666464;
 }
 
 .container{
@@ -485,7 +562,7 @@ header #logoImage{
 
 header{
     background-color: #fff;
-    color: #33bb55;
+    color: #1e8922;
     margin-left: auto;
     overflow: hidden;
 }
@@ -499,21 +576,21 @@ header{
 .navbar a{
     float: right;
     display: block;
-    color: #60af3c;
+    color: #1d4f31;
     text-align: center;
     padding: 20px 16px;
     text-decoration: none;
     font-size: 22px;
-    
+
 }
 
 .navbar ul{
     margin: 8px 0 0 0;
-    list-style: none;   
+    list-style: none;
 }
 
 .navbar a:hover{
-    color: #135a25;
+    color: #F2B80A;
 }
 
 /* Side Bar */
@@ -524,7 +601,7 @@ header{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #51cf16;
+    background-color: #1d4f31;
     opacity: 0.9;
     overflow: hidden;
     padding-top: 100px;
@@ -534,8 +611,9 @@ header{
 .side-nav a{
     padding: 10px 10px 10px 30px;
     text-decoration: none;
-    font-size: 22px;
-    color: rgb(83, 82, 82);
+    font-size: 25px;
+    color: #F2B80A;
+    opacity: 0.9;
     display: block;
     transition: 0.3s;
 }
@@ -553,7 +631,7 @@ header{
 }
 
 #main{
-    transition: margin-left 0.5s;
+    transition: marginLeft 0.5s;
     margin: auto;
     width: 100%;
 }
@@ -637,7 +715,7 @@ header{
         min-width: 100%;
         max-width: 100%;
     }
-    
+
     .about-content-container{
         padding: 0rem;
     }
